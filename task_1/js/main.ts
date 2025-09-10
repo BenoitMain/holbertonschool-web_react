@@ -28,13 +28,21 @@ interface Directors extends Teacher {
 }
 
 const director1: Directors = {
-  firstName: 'John',
-  lastName: 'Doe',
-  location: 'London',
-  fullTimeEmployee: true,
-  numberOfReports: 17,
+    firstName: 'John',
+    lastName: 'Doe',
+    location: 'London',
+    fullTimeEmployee: true,
+    numberOfReports: 17,
+};
+
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+    return `${firstName.charAt(0)}. ${lastName}`;
 };
 
 console.log(teacher2);
 console.log(teacher3);
 console.log(director1);
+console.log(printTeacher("John", "Doe")); // J. Doe
